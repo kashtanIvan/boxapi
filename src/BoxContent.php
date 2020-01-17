@@ -1,6 +1,6 @@
 <?php
 
-namespace Maengkom\Box;
+namespace Kashtanivan\Box;
 
 trait BoxContent {
 

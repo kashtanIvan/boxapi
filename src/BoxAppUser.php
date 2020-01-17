@@ -1,6 +1,6 @@
 <?php
 
-namespace Maengkom\Box;
+namespace Kashtanivan\Box;
 
 use Config;
 use Lcobucci\JWT\Builder;
@@ -114,7 +114,7 @@ class BoxAppUser
 		$csc = $this->config['au_client_secret'];
 
 		$result = shell_exec("curl $this->token_url $attributes&client_id=$cid&client_secret=$csc&assertion=$assertion' -X POST");
-		
+
 		try
 		{
 	            $this->access_token = json_decode($result, true)["access_token"];

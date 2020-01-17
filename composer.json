@@ -1,5 +1,5 @@
 {
-    "name": "maengkom/boxapi",
+    "name": "kashtanIvan/boxapi",
     "description": "Latest Box API for Standard User & App User",
     "keywords": ["box", "boxapi", "laravel"],
     "license": "MIT",
@@ -20,7 +20,7 @@
     ],
     "autoload": {
         "psr-4": {
-            "Maengkom\\Box\\": "src"
+            "Kashtanivan\\Box\\": "src"
         }
     },
     "minimum-stability": "dev"

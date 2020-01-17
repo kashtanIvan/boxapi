@@ -1,6 +1,6 @@
 <?php
 
-namespace Maengkom\Box;
+namespace Kashtanivan\Box;
 
 use Illuminate\Support\ServiceProvider;
 
@@ -12,14 +12,14 @@ class BoxAPIServiceProvider extends ServiceProvider
      * @var bool
      */
     protected $defer = false;
-    
+
     /**
      * Actual provider
      *
      * @var \Illuminate\Support\ServiceProvider
-     */  
+     */
     protected $provider;
-    
+
     /**
      * Create a new service provider instance.
      *
@@ -31,7 +31,7 @@ class BoxAPIServiceProvider extends ServiceProvider
         parent::__construct($app);
         $this->provider = $this->getProvider();
     }
-    
+
     /**
      * Bootstrap the application events.
      *
@@ -41,7 +41,7 @@ class BoxAPIServiceProvider extends ServiceProvider
     {
         return $this->provider->boot();
     }
-    
+
     /**
      * Register the service provider.
      *
@@ -55,16 +55,16 @@ class BoxAPIServiceProvider extends ServiceProvider
     /**
      * Return ServiceProvider according to Laravel version
      *
-     * @return \Maengkom\Box\Provider\ProviderInterface
+     * @return \Kashtanivan\Box\Provider\ProviderInterface
      */
     private function getProvider()
     {
         if ($this->app instanceof \Laravel\Lumen\Application) {
-            $provider = '\Maengkom\Box\BoxAPIServiceProviderLumen';
+            $provider = '\Kashtanivan\Box\BoxAPIServiceProviderLumen';
         } elseif (version_compare(\Illuminate\Foundation\Application::VERSION, '5.0', '<')) {
-            $provider = '\Maengkom\Box\BoxAPIServiceProviderLaravel4';
+            $provider = '\Kashtanivan\Box\BoxAPIServiceProviderLaravel4';
         } else {
-            $provider = '\Maengkom\Box\BoxAPIServiceProviderLaravel5';
+            $provider = '\Kashtanivan\Box\BoxAPIServiceProviderLaravel5';
         }
         return new $provider($this->app);
     }

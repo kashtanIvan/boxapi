@@ -1,6 +1,6 @@
 <?php
 
-namespace Maengkom\Box;
+namespace Kashtanivan\Box;
 
 use Illuminate\Support\ServiceProvider;
 
@@ -35,14 +35,14 @@ class BoxAPIServiceProviderLaravel5 extends ServiceProvider
             return new BoxAppUser( $app['config']->get('boxapi') );
         });
 
-        $app->alias('boxappuser', 'Maengkom\Box\BoxAppUser');
+        $app->alias('boxappuser', 'Kashtanivan\Box\BoxAppUser');
 
         // create standard user
         $app->singleton('boxstandarduser', function ($app) {
             return new BoxStandardUser( $app['config']->get('boxapi') );
         });
 
-        $app->alias('boxstandarduser', 'Maengkom\Box\BoxStandardUser');
+        $app->alias('boxstandarduser', 'Kashtanivan\Box\BoxStandardUser');
 
     }
 }

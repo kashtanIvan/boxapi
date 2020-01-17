@@ -1,6 +1,6 @@
 <?php
 
-namespace Maengkom\Box;
+namespace Kashtanivan\Box;
 
 use Illuminate\Support\ServiceProvider;
 
@@ -36,6 +36,6 @@ class BoxAPIServiceProviderLumen extends ServiceProvider
             return new BoxAppUser($config);
         });
 
-        $app->alias('boxappuser', 'Maengkom\Box\BoxAppUser');
+        $app->alias('boxappuser', 'Kashtanivan\Box\BoxAppUser');
     }
 }

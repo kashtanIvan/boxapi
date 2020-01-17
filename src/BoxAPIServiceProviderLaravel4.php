@@ -1,6 +1,6 @@
 <?php
 
-namespace Maengkom\Box;
+namespace Kashtanivan\Box;
 
 use Illuminate\Support\ServiceProvider;
 
@@ -13,7 +13,7 @@ class BoxAPIServiceProviderLaravel4 extends ServiceProvider
      */
     public function boot()
     {
-        $this->package('maengkom/boxapi');
+        $this->package('kashtanivan/boxapi');
     }
 
     /**
@@ -25,13 +25,13 @@ class BoxAPIServiceProviderLaravel4 extends ServiceProvider
     {
         $app = $this->app;
 
-        $app['config']->package('maengkom/boxapi', app_path().'/config/packages/maengkom/boxapi/');
+        $app['config']->package('kashtanivan/boxapi', app_path().'/config/packages/kashtanivan/boxapi/');
 
         // create appuser
         $app['boxappuser'] = $app->share(function ($app) {
             return new BoxAppUser( $app['config']->get('boxapi::config') );
         });
 
-        $app->alias('boxappuser', 'Maengkom\Box\BoxAppUser');
+        $app->alias('boxappuser', 'Kashtanivan\Box\BoxAppUser');
     }
 }
